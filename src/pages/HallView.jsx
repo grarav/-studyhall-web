@@ -164,7 +164,7 @@ export default function HallView() {
             {signups.map((s) => (
               <div key={s.id} className="card">
                 <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 8 }}>
-                  {s.photo_url ? <img src={`${BASE_URL}${s.photo_url}`} alt="" style={{ width: 42, height: 42, borderRadius: "50%", objectFit: "cover" }} /> : <div style={{ width: 42, height: 42, borderRadius: "50%", background: "var(--brass)" }} />}
+                  {s.photo_url ? <img src={s.photo_url.startsWith("http") ? s.photo_url : `${BASE_URL}${s.photo_url}`} alt="" style={{ width: 42, height: 42, borderRadius: "50%", objectFit: "cover" }} /> : <div style={{ width: 42, height: 42, borderRadius: "50%", background: "var(--brass)" }} />}
                   <div>
                     <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 15 }}>{s.name} — Seat {s.seat_number}</div>
                     <div style={{ fontSize: 11.5, color: "var(--ink-soft)" }}>DOB {s.dob} · {s.gender} · {s.mobile}</div>
@@ -347,7 +347,7 @@ function SeatDetailModal({ slug, seatNumber, detail, onClose, onChanged, onVacat
     <Modal onClose={onClose}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
         {student.photo_url ? (
-          <img src={`${BASE_URL}${student.photo_url}`} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover" }} />
+         <img src={student.photo_url.startsWith("http") ? student.photo_url : `${BASE_URL}${student.photo_url}`} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover" }} />
         ) : (
           <div style={{ width: 46, height: 46, borderRadius: "50%", background: "var(--brass)" }} />
         )}
