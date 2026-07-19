@@ -5,10 +5,8 @@ export default function Landing() {
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
       <div style={{ width: "100%", maxWidth: 420, textAlign: "center" }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.14em", color: "var(--brass-deep)", textTransform: "uppercase", marginBottom: 10 }}>
-          Study hall administration
-        </div>
-        <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 30, marginBottom: 34 }}>Who's logging in?</div>
+        <img src="/logo.png" alt="Nice Study Centre" style={{ width: 120, height: 120, objectFit: "contain", marginBottom: 14 }} />
+        <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 30, marginBottom: 34, letterSpacing: "0.02em" }}>NICE STUDY CENTRE</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <button
             onClick={() => nav("/admin/login")}
