@@ -6,8 +6,8 @@ export default function Landing() {
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
       <div style={{ width: "100%", maxWidth: 420, textAlign: "center" }}>
         <img src="/logo.png" alt="Nice Study Centre" style={{ width: 320, height: 320, objectFit: "contain", marginBottom: 00 }} />
-        <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 30, marginBottom: 34, letterSpacing: "0.02em" }}>NICE STUDY CENTRE</div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+        <div style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontSize: 30, marginBottom: 3, letterSpacing: "0.02em" }}>NICE STUDY CENTRE</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <button
             onClick={() => nav("/admin/login")}
             style={{ background: "var(--ink)", color: "var(--parchment)", border: "none", borderRadius: 14, padding: "24px 22px", cursor: "pointer", textAlign: "left" }}
