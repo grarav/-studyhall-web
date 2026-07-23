@@ -90,7 +90,7 @@ function SignupWizard() {
   const [submitted, setSubmitted] = useState(null);
   const nav = useNavigate();
 
-  const PASSWORD_RULES = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+  const PASSWORD_RULES = /^.{4,}$/;
 
   async function goToSeatStep() {
     if (!form.name.trim() || !form.photoUrl || !form.dob || !form.gender || !form.mobile || !form.aadhar || !form.aadharPhotoUrl || !form.hallSlug) {
@@ -204,7 +204,7 @@ function SignupWizard() {
       </div>
       <Field label="Mobile number"><input className="field-input" value={form.mobile} onChange={(e) => setForm((f) => ({ ...f, mobile: e.target.value.replace(/\D/g, "").slice(0, 10) }))} placeholder="10-digit mobile — this is your login" /></Field>
       <Field label="Password"><input type="password" className="field-input" value={form.password} onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))} /></Field>
-      <div style={{ fontSize: 11, color: "var(--ink-soft)", marginTop: -8, marginBottom: 12 }}>8+ characters with uppercase, lowercase, a number, and a special character.</div>
+     <div style={{ fontSize: 11, color: "var(--ink-soft)", marginTop: -8, marginBottom: 12 }}>At least 4 characters.</div>
       <Field label="Confirm password"><input type="password" className="field-input" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} /></Field>
       <Field label="Aadhar number"><input className="field-input" value={form.aadhar} onChange={(e) => setForm((f) => ({ ...f, aadhar: e.target.value.replace(/\D/g, "").slice(0, 12) }))} /></Field>
       <Field label="Aadhar card photo"><PhotoUpload label="Upload Aadhar card" value={form.aadharPhotoUrl} onChange={(url) => setForm((f) => ({ ...f, aadharPhotoUrl: url }))} folder="aadhar-cards" /></Field>
