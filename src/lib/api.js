@@ -69,7 +69,7 @@ export const api = {
   studentMe: () => request("/api/student/me", { kind: "student" }),
   requestSeatChange: (body) => request("/api/student/seat-change", { method: "POST", body, kind: "student" }),
   requestVacate: () => request("/api/student/vacate", { method: "POST", kind: "student" }),
-
+studentForgotPassword: (body) => request("/api/student/forgot-password", { method: "POST", body }),
   // Uploads & payments
   upload: (file, folder = "misc") => {
     const form = new FormData();
